@@ -227,12 +227,12 @@ class AFN:
     def EvaluarExpr(self):
         try:
             self.EvaluarNext(self.expr_reg[0], '0', self.expr_reg)
-            return 'Si' if self.expr_aceptada else 'No'
+            return 'Aceptada' if self.expr_aceptada else 'Rechazada'
         except RecursionError:
             if self.expr_reg[0] in self.simbolos and self.expr_reg[0] != 'e':
-                return 'Si'
+                return 'Aceptada'
             else:
-                return 'No'
+                return 'Rechazada'
 
     def EvaluarNext(self, evaluar_simbolo, estado_actual, evaluar_expr):
 
@@ -293,5 +293,5 @@ AFN:
 - Estado final: {self.estados_de_aceptacion}
 - Tabla de transición:
         '''
-        gen_diagrama('./AFN.gv', source)
-        self.dot.render('./AFN.gv', view=True)
+        gen_diagrama('./output/AFN.gv', source)
+        self.dot.render('./output/AFN.gv', view=True)

@@ -1,9 +1,13 @@
 from graphviz import *
-from utils import WriteToFile
 from pythomata import SimpleDFA
 
 ESTADOS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
+def WriteToFile(filename: str, content: str):
+    with open(filename, 'w') as _file:
+        _file.write(content)
+
+    return f'Archivo "{filename}" creado.'
 
 class DFA:
     def __init__(self, tabal_transiciones, simbolos, estados, estado_final_afn, expr_reg):
@@ -165,8 +169,8 @@ class DFA:
         grafico.attr(rankdir='LR')
 
         source = grafico.source
-        WriteToFile('.AFD.gv', source)
-        grafico.render('.AFD.gv', format='pdf', view=True)
+        WriteToFile('./output/AFD.gv', source)
+        grafico.render('./output/AFD.gv', format='pdf', view=True)
 
 
 class Nodo:
