@@ -1,4 +1,3 @@
-from graphviz import *
 from pythomata import SimpleDFA
 
 ESTADOS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
