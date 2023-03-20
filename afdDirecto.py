@@ -217,7 +217,7 @@ class AFDD:
         for simbolo in self.expr_reg:
 
             if not simbolo in self.simbolos:
-                return 'No'
+                return 'Rechazada'
 
             try:
                 estado_actual = self.func_trans[estado_actual][simbolo]
@@ -225,7 +225,7 @@ class AFDD:
                 if estado_actual in self.estados_aceptacion and simbolo in self.func_trans['A']:
                     estado_actual = self.func_trans['A'][simbolo]
                 else:
-                    return 'No'
+                    return 'Rechazada'
 
         return 'Aceptada' if estado_actual in self.estados_aceptacion else 'Rechazada'
 

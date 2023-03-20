@@ -11,7 +11,7 @@ def WriteToFile(filename: str, content: str):
 class AFD:
     def __init__(self, tabal_transiciones, simbolos, estados, estado_final_afn, expr_reg):
 
-        # Proveniente del NFA
+        # AFN
         self.tabal_transiciones = tabal_transiciones
         self.estado_final_afn = estado_final_afn
 
