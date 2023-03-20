@@ -128,7 +128,7 @@ class AFDD:
         metodo = getattr(self, nombreDelMetodo)
         return metodo(nodo)
 
-    def LetraNodo(self, nodo):
+    def SimboloNodo(self, nodo):
         new_nodo = Nodo(self.iter, [self.iter], [
                         self.iter], value=nodo.value, nullable=False)
         self.nodos.append(new_nodo)
@@ -175,7 +175,7 @@ class AFDD:
         self.nodos.append(Nodo(None, primeraPos, ultimaPos, True, '*', nodo_a))
         return Nodo(None, primeraPos, ultimaPos, True, '*', nodo_a)
 
-    def CruzNodo(self, nodo):
+    def PlusNodo(self, nodo):
         nodo_a = self.ParseTree(nodo.a)
 
         self.iter += 1
@@ -229,7 +229,7 @@ class AFDD:
 
         return 'Aceptada' if estado_actual in self.estados_aceptacion else 'Rechazada'
 
-    def graficaAFD(self):
+    def GraficarAFDD(self):
         estados = set(self.func_trans.keys())
         alfabeto = set(self.simbolos)
 

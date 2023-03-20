@@ -35,15 +35,24 @@ if __name__ == "__main__":
 
     afn = AFN(arbol, lector.get_simbolos(), cadena)
     afn_expr = afn.EvaluarExpr()
-    afn.DiagramaAFN()
+    print('La cadena es aceptada o rechazada por la expresion regular?')
+    print(afn_expr)
 
     afd = AFD(afn.funcion_transicion, afn.simbolos, afn.estado_actual, afn.estados_de_aceptacion, cadena)
     afd.AFNtoAFD()
     afd_expr = afd.EvaluarExpr()
-    afd.GaficarAFD()
+    print('La cadena es aceptada o rechazada por la expresion regular?')
+    print(afd_expr)
 
-    afdd = AFDD(arbol_directo, lector_directo.GetSimbolos, cadena)
+    afdd = AFDD(arbol_directo, lector_directo.GetSimbolos(), cadena)
     afdd_expr = afdd.EvaluarExprReg()
-    afdd.graficaAFD()
+    print('La cadena es aceptada o rechazada por la expresion regular?')
+    print(afdd_expr)
 
-    exit(1)
+    afn.DiagramaAFN()
+    afd.GaficarAFD()
+    afdd.GraficarAFDD()
+
+    print('\nEND')
+
+    exit(0)

@@ -88,7 +88,7 @@ class AFD:
                 new_set += list(set([*cerrar_simbolo, *cerradura_e]))
 
                 # Si este nuevo estado no existe es nuevo...
-                if not new_set in self.estados.valores():
+                if not new_set in self.estados.values():
                     self.iteraciones += 1
                     nuevo_estado = ESTADOS[self.iteraciones]
 
@@ -149,8 +149,8 @@ class AFD:
         return 'Aceptada' if estado_actual in self.estados_aceptacion else 'Rechazada'
 
     def GetEstados(self):
-        for estado, valores in self.tabal_transiciones.items():
-            self.nodos.append(Nodo(int(estado), valores))
+        for estado, values in self.tabal_transiciones.items():
+            self.nodos.append(Nodo(int(estado), values))
 
     def AFNtoAFD(self):
         self.GetEstados()
