@@ -8,7 +8,7 @@ def WriteToFile(filename: str, content: str):
 
     return f'Archivo "{filename}" creado.'
 
-class DFA:
+class AFD:
     def __init__(self, tabal_transiciones, simbolos, estados, estado_final_afn, expr_reg):
 
         # Proveniente del NFA
