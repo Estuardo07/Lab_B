@@ -1,24 +1,29 @@
 digraph {
 	fake [style=invisible]
-	D [shape=doublecircle]
-	G [shape=doublecircle]
-	H
-	E
-	F
-	C
-	A [root=true]
 	B
+	A [root=true]
+	D [shape=doublecircle]
+	H [shape=doublecircle]
+	C
+	F
+	G [shape=doublecircle]
+	E [shape=doublecircle]
 	fake -> A [style=bold]
-	E -> G [label=b]
-	C -> D [label=a]
-	G -> G [label=b]
+	A -> A [label=b]
+	E -> C [label=b]
+	D -> B [label=a]
+	C -> E [label=a]
+	A -> B [label=a]
+	G -> E [label=a]
+	F -> G [label=b]
+	G -> D [label=b]
+	E -> F [label=a]
+	B -> F [label=a]
+	C -> D [label=b]
 	H -> G [label=b]
-	B -> C [label=a]
-	A -> B [label=b]
-	E -> F [label=c]
-	F -> F [label=c]
-	A -> E [label=a]
-	E -> H [label=a]
-	F -> D [label=b]
+	F -> H [label=a]
+	H -> H [label=a]
+	D -> A [label=b]
+	B -> C [label=b]
 	rankdir=LR
 }
